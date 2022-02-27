@@ -27,11 +27,12 @@ function entrega_valores(){
     fetch('http://localhost:5000/api/lista')
         .then(response => response.json())
         .then(data =>{
-            const add_url =
-                `<br> Nome:` + data.nome +
-                `<br> Idade:` + data.idade + `<br>
-                Email:` + data.email + `<br>`
-
-            lista_display.insertAdjacentHTML('beforeend', add_url)   
+            data.map((item) => {
+                const add_url =
+                `<br> Nome:` + item.nome +
+                `<br> Idade:` + item.idade + `<br>
+                Email:` + item.email + `<br>`
+                lista_display.insertAdjacentHTML('beforeend', add_url) 
+            })  
         })
 }

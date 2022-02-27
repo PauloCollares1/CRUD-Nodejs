@@ -1,37 +1,13 @@
 const banco = require('../Sistema/Database/banco.js');
 
 // ---- Objeto auxiliar ---- //
-let lista_pessoas = {
-    nome:"",
-    idade:"",
-    email:""
-}
+let lista_pessoas = [];
 
-// ---- Construtor ---- //
-class Pessoa {
-
-    constructor(nome, idade, email){
-        nome = this.nome;
-        idade = this.idade;
-        email = this.email
-    }
-}
-
-function imprime_pessoa(){
-    return lista_pessoas;
-}
 
 function cadastro(nome, idade, email){
 
-    const pessoa = new Pessoa;
-    pessoa.nome = nome;
-    pessoa.idade = idade;
-    pessoa.email = email;
-
-    lista_pessoas = {nome, idade, email}
     salvar_no_banco(nome, idade, email)
 }
-
 
 async function salvar_no_banco(nome, idade,email){
 
@@ -43,16 +19,15 @@ async function salvar_no_banco(nome, idade,email){
     await ADD_DB.save();
     console.log("----------------------------------")
     console.log("Novo usuário cadastrado: "+ nome, idade); 
-    mostrar_banco();
 }
 
 async function mostrar_banco(){
 
-    const teste = await banco.mongoose_model_cadastro.find({})
-    console.log("----------------------------------")
-    console.log("lista de Pessoas no banco"); 
-    console.log(teste);
-
+    // não da pra trazer direto do banco, por isso a lista
+    const lista = await banco.mongoose_model_cadastro.find({}) 
+    lista.map((item) => {
+        lista_pessoas.push(item)
+    })
 }
 
 async function deletar_do_banco(email){
@@ -65,4 +40,4 @@ async function deletar_do_banco(email){
 
 
 
-module.exports = { cadastro, lista_pessoas, imprime_pessoa, salvar_no_banco, mostrar_banco, deletar_do_banco }
+module.exports = { cadastro, lista_pessoas, salvar_no_banco, mostrar_banco, deletar_do_banco }

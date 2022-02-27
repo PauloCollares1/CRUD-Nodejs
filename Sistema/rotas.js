@@ -7,7 +7,8 @@ rota = express.Router();
 
 rota.get('/lista', (req, res) => {
 
-    res.json(funcoes.imprime_pessoa())
+    funcoes.mostrar_banco();
+    res.json(funcoes.lista_pessoas)
 })
 
 rota.post('/cadastramento', express.json(), (req, res) => {
