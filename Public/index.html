@@ -8,10 +8,16 @@
     <title>Lista de cadastros</title>
 </head>
 <body>
-    <h3>Minha lista de cadastrados</h3>
+    
+    <div class="cadastro">
 
-
-
+        <h2">Cadastro : Sistema</h2>
+        <p>Preencha abaixo com seus dados ou Cadastre-se</p>
+            <input type="text" id="nome_html" name="nome_html" placeholder="Seu nome" minlength="3" maxlength="30" required/>
+            <input type="number" id="idade_html" name="idade_html" placeholder="Sua idade" minlength="3" maxlength="3" required/>
+            <input type="email" id="email_html" name="email_html" placeholder="Seu E-mail" minlength="10" maxlength="50" required/>
+            <button onclick="pega_valores()">Cadastrar</button>
+    </div>
     <script src="./scripts.js"></script>
 </body>
 </html>
