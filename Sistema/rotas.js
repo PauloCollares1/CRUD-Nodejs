@@ -1,5 +1,5 @@
-const express = require('express');
-rota = express();
+const rota = require('express').Router();
+
 
 
 

@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
-const rotas = require('./rotas');
 const express = require('express');
+const rotas = require('./rotas');
 const http = require('http');
 const path = require('path');
 
@@ -10,15 +10,11 @@ const PORT = 5000;
 const app = express();
 const server = http.Server(app);
 
+// ---- Página estática ---- //
+app.use('/', express.static('Public'));
+
 // ---- Setando as rotas ---- //
-app.get('/', (req, res) => {
-    res.send('Rota barra iniciada');
-})
-
-app.use('/api', rotas.rota, (req, res) => {
-    res.send('Rota /api');
-})
-
+app.use('/api', rotas.rota)
 
 
 
