@@ -1,7 +1,11 @@
 
 
-// ---- Lista auxiliar ---- //
-let lista_pessoas = [];
+// ---- Objeto auxiliar ---- //
+let lista_pessoas = {
+    nome:"",
+    idade:"",
+    email:""
+}
 
 // ---- Construtor ---- //
 class Pessoa {
@@ -13,6 +17,10 @@ class Pessoa {
     }
 }
 
+function imprime_pessoa(){
+    return lista_pessoas;
+}
+
 function cadastro(nome, idade, email){
 
     const pessoa = new Pessoa;
@@ -21,7 +29,7 @@ function cadastro(nome, idade, email){
     pessoa.idade = idade;
     pessoa.email = email;
 
-    lista_pessoas.push(pessoa);
+    lista_pessoas = {nome, idade, email}
 
     console.log(lista_pessoas);
 }
@@ -31,4 +39,4 @@ function cadastro(nome, idade, email){
 
 
 
-module.exports = { cadastro }
+module.exports = { cadastro, lista_pessoas, imprime_pessoa }

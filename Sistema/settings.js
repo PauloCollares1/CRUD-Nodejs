@@ -10,6 +10,9 @@ const PORT = 5000;
 const app = express();
 const server = http.Server(app);
 
+// ---- Conexão do Banco ---- //
+
+
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
 

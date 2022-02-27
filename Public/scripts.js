@@ -1,6 +1,7 @@
 let nome_display = document.getElementById('nome_html');
 let idade_display = document.getElementById('idade_html');
 let email_display = document.getElementById('email_html');
+let lista_display = document.getElementById('lista_html');
 
 function pega_valores(){
 
@@ -17,5 +18,20 @@ function pega_valores(){
     fetch('http://localhost:5000/api/cadastramento',options)
     document.getElementById('nome_html').value = "";
     document.getElementById('idade_html').value = "";
-    document.getElementById('email_html').value = "";   
+    document.getElementById('email_html').value = ""; 
+    entrega_valores();  
+}
+
+function entrega_valores(){
+
+    fetch('http://localhost:5000/api/lista')
+        .then(response => response.json())
+        .then(data =>{
+            const add_url =
+                `<br> Nome:` + data.nome +
+                `<br> Idade:` + data.idade + `<br>
+                Email:` + data.email + `<br>`
+
+            lista_display.insertAdjacentHTML('beforeend', add_url)   
+        })
 }

@@ -6,7 +6,8 @@ rota = express.Router();
 // ---- Minhas rotas ---- //
 
 rota.get('/lista', (req, res) => {
-    res.send("Entrei agora no /cadastrados");
+
+    res.json(funcoes.imprime_pessoa())
 })
 
 rota.post('/cadastramento', express.json(), (req, res) => {
@@ -15,9 +16,7 @@ rota.post('/cadastramento', express.json(), (req, res) => {
     const idade = req.body.script_idade;
     const email = req.body.script_email;
 
-    
     funcoes.cadastro(nome,idade,email);
-
 })
 
 
