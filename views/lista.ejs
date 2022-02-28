@@ -8,6 +8,19 @@
 </head>
 <body>
     <h1>minha página EJS</h1>
-    <a href="/">Voltar para tela de cadastro</a>
+    <a href="/"><button>Tela de cadastro</button></a>
+    
+    <ul>
+        <% for(var i=0; i<myVar_html.length; i++) {%>
+            <li>
+                Nome: <%= myVar_html[i].nome %>
+                Idade: <%= myVar_html[i].idade %>
+                Email: <%= myVar_html[i].email %>
+            </li>
+            <br>
+        <% } %>
+    </ul>
+        
 </body>
 </html>
+

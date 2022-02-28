@@ -5,12 +5,21 @@ rota = express.Router();
 
 // ---- Minhas rotas ---- //
 
+// Enviando ao front usando o EJS
 rota.get('/lista', (req, res) => {
-
+    
     funcoes.mostrar_banco();
-    res.json(funcoes.lista_pessoas)
+    let myVar = funcoes.lista_pessoas;
+    res.render('lista', { myVar_html : myVar });
+});
+
+rota.get('/update', (req, res) => {
+
+    
 })
 
+
+// Cadastrando usando a página estática 
 rota.post('/cadastramento', express.json(), (req, res) => {
 
     const nome = req.body.script_nome;
@@ -20,10 +29,7 @@ rota.post('/cadastramento', express.json(), (req, res) => {
     funcoes.cadastro(nome,idade,email);
 })
 
-rota.get('/update', (req, res) => {
 
-    res.send(funcoes.update_banco("zé doido", 99, "zzzzz@zzzz"))
-})
 
 
 
