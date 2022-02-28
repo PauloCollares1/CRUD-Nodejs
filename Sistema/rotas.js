@@ -20,6 +20,13 @@ rota.post('/cadastramento', express.json(), (req, res) => {
     funcoes.cadastro(nome,idade,email);
 })
 
+rota.get('/update', (req, res) => {
+
+    res.send(funcoes.update_banco("zé doido", 99, "zzzzz@zzzz"))
+})
+
+
+
 
 
 

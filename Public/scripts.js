@@ -1,3 +1,5 @@
+
+
 let nome_display = document.getElementById('nome_html');
 let idade_display = document.getElementById('idade_html');
 let email_display = document.getElementById('email_html');
@@ -31,8 +33,14 @@ function entrega_valores(){
                 const add_url =
                 `<br> Nome:` + item.nome +
                 `<br> Idade:` + item.idade + `<br>
-                Email:` + item.email + `<br>`
+                Email:` + item.email + `<br> <button id='delecao' ${onclick=deletar()}> Deletar </button>`
                 lista_display.insertAdjacentHTML('beforeend', add_url) 
             })  
         })
+}
+
+function deletar(){
+    let teste = document.getElementById('delecao');
+    
+    console.log("oii");
 }

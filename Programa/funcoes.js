@@ -37,7 +37,11 @@ async function deletar_do_banco(email){
     console.log("usuário deletado: "+ email); 
 }
 
+async function update_banco(nome, idade, email){
+    await banco.mongoose_model_cadastro.findOneAndUpdate({email:email},{nome:nome},{idade:idade})
+
+}
 
 
 
-module.exports = { cadastro, lista_pessoas, salvar_no_banco, mostrar_banco, deletar_do_banco }
+module.exports = {update_banco ,cadastro, lista_pessoas, salvar_no_banco, mostrar_banco, deletar_do_banco }

@@ -4,6 +4,7 @@ const express = require('express');
 const rotas = require('./rotas');
 const http = require('http');
 const path = require('path');
+const ejs = require('ejs');
 
 
 // ---- Settings ---- //
@@ -19,10 +20,18 @@ const mongo = 'Formulario_DB'
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
 
+// ---- Configurando EJS ---- //
+app.use(bodyParser.urlencoded({extended:true})); 
+app.engine('ejs', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 // ---- Setando as rotas ---- //
 app.use('/api', rotas.rota)
 
-
+app.use('/lista', (req,res) => {
+    res.render('lista.ejs');
+})
 
 // ---- Conectando o servidor ---- //
 server.listen(PORT, () => {console.log(`Servidor rodando na porta: ${PORT}`)})
