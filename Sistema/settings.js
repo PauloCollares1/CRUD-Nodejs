@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const rotas = require('./rotas');
 const http = require('http');
+const { dirname } = require('path');
 
 // ---- Settings ---- //
 const PORT = 5000;
@@ -16,6 +17,7 @@ const mongo = 'Formulario_DB'
 
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
+app.use('/lista',express.static(__dirname + 'Public/Files'));
 
 // ---- Configurando EJS ---- //
 app.use(bodyParser.urlencoded({extended:true}));
