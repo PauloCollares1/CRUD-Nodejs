@@ -17,7 +17,7 @@ const mongo = 'Formulario_DB'
 
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
-app.use('/lista',express.static(__dirname + 'Public/Files'));
+app.use('/lista',express.static('Public/Files'));
 
 // ---- Configurando EJS ---- //
 app.use(bodyParser.urlencoded({extended:true}));
