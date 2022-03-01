@@ -10,7 +10,8 @@ rota.get('/lista', (req, res) => {
     
     funcoes.mostrar_banco();
     let myVar = funcoes.lista_pessoas;
-    res.render('lista', { myVar_html : myVar });
+    let condicao = true;
+    res.render('lista', { myVar_html : myVar, condicao:condicao });
 });
 
 rota.get('/update', (req, res) => {

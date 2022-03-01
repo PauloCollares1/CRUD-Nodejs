@@ -4,10 +4,6 @@ const express = require('express');
 const rotas = require('./rotas');
 const http = require('http');
 
-
-
-
-
 // ---- Settings ---- //
 const PORT = 5000;
 const app = express();

@@ -16,11 +16,18 @@
                 Nome: <%= myVar_html[i].nome %>
                 Idade: <%= myVar_html[i].idade %>
                 Email: <%= myVar_html[i].email %>
+                <button onclick="teste()">Deletar</button>
             </li>
             <br>
         <% } %>
     </ul>
-        
+    <% if(condicao == true) { %>
+        <h3 id="meuh3">This h3 tag will be displayed</h3>
+       <% } else { %>
+        <p> This p tag will be displayed condicao : <%= condicao %></p>
+    <% } %>
+
+</script>
 </body>
 </html>
 
