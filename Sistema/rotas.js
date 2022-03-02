@@ -7,9 +7,15 @@ rota = express.Router();
 
 // Enviando ao front usando o EJS
 rota.get('/lista', (req, res) => {
+
+    if(funcoes.lista_pessoas.length > 0){
+        return res.end()    
+    }else{
+        funcoes.mostrar_banco();
+        res.json(funcoes.lista_pessoas);  
+    }
     
-    funcoes.mostrar_banco();
-    res.json(funcoes.lista_pessoas);
+    
 });
 
 rota.get('/update', (req, res) => {

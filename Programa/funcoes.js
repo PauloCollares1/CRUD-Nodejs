@@ -3,6 +3,10 @@ const banco = require('../Sistema/Database/banco.js');
 // ---- Objeto auxiliar ---- //
 let lista_pessoas = [];
 
+if(lista_pessoas.length <= 0){
+    mostrar_banco();
+}
+
 
 function cadastro(nome, idade, email){
 
@@ -25,9 +29,9 @@ async function mostrar_banco(){
 
     // não da pra trazer direto do banco, por isso a lista
     const lista = await banco.mongoose_model_cadastro.find({}) 
-    lista.map((item) => {
+        lista.map((item) => {
         lista_pessoas.push(item)
-    })
+    }) 
 }
 
 async function deletar_do_banco(email){
