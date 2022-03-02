@@ -9,9 +9,7 @@ rota = express.Router();
 rota.get('/lista', (req, res) => {
     
     funcoes.mostrar_banco();
-    let myVar = funcoes.lista_pessoas;
-    let condicao = true;
-    res.render('lista', { myVar_html : myVar, condicao:condicao });
+    res.json(funcoes.lista_pessoas);
 });
 
 rota.get('/update', (req, res) => {
