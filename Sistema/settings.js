@@ -19,6 +19,7 @@ const mongo = 'Formulario_DB'
 app.use('/', express.static('Public'));
 app.use('/lista',express.static('Public/Files'));
 
+
 // ---- Configurando EJS ---- //
 app.use(bodyParser.urlencoded({extended:true}));
 app.engine('ejs', require('ejs').renderFile); 

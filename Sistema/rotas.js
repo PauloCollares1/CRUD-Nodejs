@@ -20,6 +20,7 @@ rota.post('/deletar', express.json() , (req,res) => {
 
     const pega_email = req.body.pegaemail;
     funcoes.deletar_do_banco(pega_email);
+    res.end();
 })
 // Cadastrando usando a página estática 
 rota.post('/cadastramento', express.json(), (req, res) => {
@@ -29,6 +30,7 @@ rota.post('/cadastramento', express.json(), (req, res) => {
     const email = req.body.script_email;
 
     funcoes.cadastro(nome,idade,email);
+    res.end();
 })
 
 
