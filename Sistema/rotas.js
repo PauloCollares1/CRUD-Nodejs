@@ -8,14 +8,7 @@ rota = express.Router();
 // Enviando ao front usando o EJS
 rota.get('/lista', (req, res) => {
 
-    if(funcoes.lista_pessoas.length > 0){
-        return res.end()    
-    }else{
-        funcoes.mostrar_banco();
-        res.json(funcoes.lista_pessoas);  
-    }
-    
-    
+    res.json(funcoes.mostrar_lista());  
 });
 
 rota.get('/update', (req, res) => {
@@ -23,7 +16,11 @@ rota.get('/update', (req, res) => {
     
 })
 
+rota.post('/deletar', express.json() , (req,res) => {
 
+    const pega_email = req.body.pegaemail;
+    funcoes.deletar_do_banco(pega_email);
+})
 // Cadastrando usando a página estática 
 rota.post('/cadastramento', express.json(), (req, res) => {
 

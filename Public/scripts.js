@@ -9,12 +9,6 @@ function verificador(){
     if(nome_display.value == "" || idade_display.value == "" ||email_display.value == ""){
         return alert("Você esqueceu um campo vazio, favor verificar");
     }
-    else if(nome_display.value < "3" || idade_display.value > "99" || idade_display.value < "1"){
-        return alert("Ou o nome ou a idade possuem a quantidade minima ou máxima permitida, favor verificar");
-    }
-    else if(nome_display.value > "99" || email_display.value < "5" || email_display.value > "99"){
-        return alert("Ou o nome ou a idade ou o email possuem a quantidade minima ou máxima permitida, favor verificar");
-    }
     else{
         return pega_valores();
     }
