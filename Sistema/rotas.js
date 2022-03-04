@@ -11,12 +11,18 @@ rota.get('/lista', (req, res) => {
     res.json(funcoes.mostrar_lista());  
 });
 
-rota.get('/update', (req, res) => {
+rota.post('/update', express.json(), (req, res) => {
 
+    const email = req.body.script_email;
+    const nome = req.body.script_nome;
+    const idade = req.body.script_idade;
     
-})
+    console.log("esse é meu email para update: " + email);
+    funcoes.update_banco(email, nome, idade);
+    res.end();
+}) 
 
-rota.post('/deletar', express.json() , (req,res) => {
+rota.post('/deletar', express.json(), (req,res) => {
 
     const pega_email = req.body.pegaemail;
     funcoes.deletar_do_banco(pega_email);

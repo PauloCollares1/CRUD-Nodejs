@@ -22,7 +22,7 @@ function entrega_valores(){
                             <b>Idade:</b>` + item.idade +
                             `<b>Email:</b>` + item.email +
                             `<button id='`+ id +`' onclick='deletar(${id})' value='`+item._id+`'> Deletar </button>
-                            <button id='`+ id +`' onclick='teste2()' value='`+item._id+`'> Editar </button>
+                            <button id='`+ id +`' onclick='teste2(${id})' value='`+item._id+`'> Editar </button>
                         </div>  
                     </div>`
                 )
@@ -52,10 +52,20 @@ function deletar(pega_id){
         body: JSON.stringify(credencial)
     }
     fetch('http://localhost:5000/api/deletar',options)
-} 
-
-function teste2(){
-    const URL="http://uol.com.br";
-    window.open(URL, 'janela', 'width=660, height=510, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
-    
 }
+
+function teste2(pega_id){
+
+    update(pega_id);
+    const URL="http://localhost:5000/update";
+    let meu_popup = window.open(URL, 'janela', 'width=660, height=510, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
+
+}
+
+function update(pega_id){
+    var email_storage = lista_deletar[pega_id]
+    localStorage.setItem('emailKey', email_storage);
+}
+
+
+

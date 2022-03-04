@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const express = require('express');
 const rotas = require('./rotas');
 const http = require('http');
-const { dirname } = require('path');
+
 
 // ---- Settings ---- //
 const PORT = 5000;
 const app = express();
+const mongo = 'Formulario_DB';
 const server = http.Server(app);
-const mongo = 'Formulario_DB'
+
 
 // ---- Conexão do Banco ---- //
     mongoose.connect(`mongodb://localhost/${mongo}`, {useNewUrlParser: true, useUnifiedTopology: true}) 
@@ -18,6 +19,7 @@ const mongo = 'Formulario_DB'
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
 app.use('/lista',express.static('Public/Files'));
+app.use('/update',express.static('Public/Updates'));
 
 
 // ---- Configurando EJS ---- //
