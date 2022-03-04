@@ -27,7 +27,7 @@ function pega_valores(){
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(credenciais)
     }
-    fetch('http://localhost:5000/api/cadastramento',options)
+    fetch('https://crud-in-node.herokuapp.com/api/cadastramento',options)
     document.getElementById('nome_html').value = "";
     document.getElementById('idade_html').value = "";
     document.getElementById('email_html').value = ""; 

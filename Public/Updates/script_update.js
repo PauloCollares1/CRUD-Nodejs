@@ -28,3 +28,4 @@ function pega_valores(){
     document.getElementById('idade_html').value = "";
     window.close();
 }
+
