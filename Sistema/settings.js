@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const rotas = require('./rotas');
 const http = require('http');
+const cors = require('cors');
 
 
 // ---- Settings ---- //
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.engine('ejs', require('ejs').renderFile); 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+app.use(cors());
 
 
 
