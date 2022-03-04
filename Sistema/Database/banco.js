@@ -11,7 +11,7 @@ const mongoose_schema_cadastro = mongoose.Schema({
 
 
 // ---- Configurações ---- //
-const mongoose_model_cadastro = mongoose.model('CRUD', mongoose_schema_cadastro);
+const mongoose_model_cadastro = mongoose.model('crud', mongoose_schema_cadastro);
 
 
 
