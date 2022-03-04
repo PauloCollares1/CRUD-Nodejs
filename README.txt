@@ -4,3 +4,7 @@ no meu front eu vou usar ejs ou html/css puro
 
 
 1) O arquivo Procfile é para ajudar no deploy Heroku, tudo escrito lá é da sintaxe deles
+
+2) Tem que setar o banco no Dotenv pra não dar ruim. 
+
+3) 

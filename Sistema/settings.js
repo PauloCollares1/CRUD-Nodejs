@@ -4,18 +4,22 @@ const express = require('express');
 const rotas = require('./rotas');
 const http = require('http');
 const cors = require('cors');
-
+require('dotenv').config();
 
 // ---- Settings ---- //
-const PORT = 5000;
+const LOCAL_PORT = 5000;
 const app = express();
-const mongo = 'Formulario_DB';
-const server = http.Server(app);
 
+const server = http.Server(app);
+require('dotenv').config()
+
+console.log(process.env.varivael);
+
+//`mongodb://localhost/${process.env.MEU_DB}`
 
 // ---- Conexão do Banco ---- //
-    mongoose.connect(`mongodb://localhost/${mongo}`, {useNewUrlParser: true, useUnifiedTopology: true}) 
-    .then(console.log(`Banco de dados Conectado: ${mongo}`)).catch(error => {console.log(error)})
+    mongoose.connect(process.env.MONGO_DB_URL, {useNewUrlParser: true, useUnifiedTopology: true}) 
+    .then(console.log(`Banco de dados Conectado: ${process.env.DB_NAME}`)).catch(error => {console.log(error)})
 
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
@@ -37,4 +41,4 @@ app.use('/api', rotas.rota)
 
 
 // ---- Conectando o servidor ---- //
-server.listen(PORT, () => {console.log(`Servidor rodando na porta: ${PORT}`)})
+server.listen(process.env.PORT || LOCAL_PORT, () => {console.log(`Servidor rodando na porta: ${PORT}`)})
