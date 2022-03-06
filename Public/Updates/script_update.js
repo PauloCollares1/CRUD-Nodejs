@@ -23,7 +23,7 @@ function pega_valores(){
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(credenciais)
     }
-    fetch('http://localhost:5000/api/update',options)
+    fetch('/api/update',options)
     document.getElementById('nome_html').value = "";
     document.getElementById('idade_html').value = "";
     window.close();

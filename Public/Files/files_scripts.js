@@ -6,7 +6,7 @@ var lista_deletar=[];
 
 function entrega_valores(){
 
-    fetch('http://localhost:5000/api/lista')
+    fetch('/api/lista')
         .then(response => response.json())
         .then(data =>{
 
@@ -22,7 +22,7 @@ function entrega_valores(){
                             <b>Idade:</b>` + item.idade +
                             `<b>Email:</b>` + item.email +
                             `<button id='`+ id +`' onclick='deletar(${id})' value='`+item._id+`'> Deletar </button>
-                            <button id='`+ id +`' onclick='teste2(${id})' value='`+item._id+`'> Editar </button>
+                            <button id='`+ id +`' onclick='tela_update(${id})' value='`+item._id+`'> Editar </button>
                         </div>  
                     </div>`
                 )
@@ -51,15 +51,14 @@ function deletar(pega_id){
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(credencial)
     }
-    fetch('http://localhost:5000/api/deletar',options)
+    fetch('/api/deletar',options)
 }
 
-function teste2(pega_id){
+function tela_update(pega_id){
 
     update(pega_id);
-    const URL="http://localhost:5000/update";
+    const URL="https://crud-in-node.herokuapp.com/update";
     let meu_popup = window.open(URL, 'janela', 'width=660, height=510, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
-
 }
 
 function update(pega_id){
