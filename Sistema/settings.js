@@ -39,4 +39,4 @@ app.use('/api', rotas.rota)
 
 
 // ---- Conectando o servidor ---- //
-server.listen(process.env.PORT ? () => {console.log("Servidor rodando na porta local -> localhost:5000")} : () => {console.log("Servidor rodando na porta do Heroku")})
+server.listen(process.env.PORT || 5000, () => {console.log("Servidor rodando...")})
