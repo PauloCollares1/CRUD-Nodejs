@@ -57,7 +57,8 @@ function deletar(pega_id){
 function tela_update(pega_id){
 
     update(pega_id);
-    const URL="https://crud-in-node.herokuapp.com/update";
+    const grab_url = document.URL;
+    const URL=`${grab_url}update`;
     let meu_popup = window.open(URL, 'janela', 'width=660, height=510, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
 }
 

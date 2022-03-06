@@ -7,13 +7,11 @@ const cors = require('cors');
 require('dotenv').config();
 
 // ---- Settings ---- //
-const LOCAL_PORT = 5000;
 const app = express();
 
 const server = http.Server(app);
 require('dotenv').config()
 
-console.log(process.env.varivael);
 
 //`mongodb://localhost/${process.env.MEU_DB}`
 
@@ -24,7 +22,7 @@ console.log(process.env.varivael);
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
 app.use('/lista',express.static('Public/Files'));
-app.use('/update',express.static('Public/Updates'));
+app.use('/lista/update',express.static('Public/Updates'));
 
 
 // ---- Configurando EJS ---- //
@@ -41,4 +39,4 @@ app.use('/api', rotas.rota)
 
 
 // ---- Conectando o servidor ---- //
-server.listen(process.env.PORT || LOCAL_PORT, () => {console.log(`Servidor rodando na porta do Heroku`)})
+server.listen((process.env.PORT == 5000) ? () => {console.log("Servidor rodando na porta local -> localhost:5000")} : () => {console.log("Servidor rodando na porta do Heroku")})

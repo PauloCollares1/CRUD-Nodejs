@@ -26,6 +26,7 @@ function pega_valores(){
     fetch('/api/update',options)
     document.getElementById('nome_html').value = "";
     document.getElementById('idade_html').value = "";
+    alert("Aletarações realizadas com sucesso!");
     window.close();
 }
 
