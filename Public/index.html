@@ -2,30 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./Estilos/home.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./assets/login-icon.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de cadastros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/cc1680a685.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <title>Login</title>
 </head>
 <body>
-    
-    <div class="cadastro">
 
-        <h1>Cadastro : Sistema</h1>
-        <h3>Preencha os campos abaixo e Cadastre-se</h3>
-            <input type="text" id="nome_html" name="nome_html" placeholder="Seu nome" minlength="3" maxlength="30" required/>
-            <input type="number" id="idade_html" name="idade_html" placeholder="Sua idade" minlength="3" maxlength="3" required/>
-            <input type="email" id="email_html" name="email_html" placeholder="Seu E-mail" minlength="10" maxlength="50" required/>
-            <button onclick="verificador()">Cadastrar</button>
-            <a href="/lista"><button>Lista</button></a>
-    </div>
+    <header class="cabecalho">
+        <div class="logo_header"><i class="fa-solid fa-key fa-lg"></i></div>
+        <nav>
+            <ul class="lista_header">
+                <li><a href="/">Eu</a></li>
+                <li><a href="/">Projeto</a></li>
+                <li id="darkmode" class="darkmode" onclick="dark_theme()"><i class="fa-regular fa-lightbulb fa-lg"></i></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section class="sessao_login">
+        <div class="login_card">
+            
+            <h1>Autenticador</h1>
+            <i class="fa-solid fa-lock fa-xl"></i>
+            <form class="formulario_login">
+                <input type="text" id="nome_html" name="nome_html" placeholder="Seu nome" minlength="3" maxlength="30" required/>
+                <input type="number" id="idade_html" name="idade_html" placeholder="Sua idade" minlength="3" maxlength="3" required/>
+                <input type="email" id="email_html" name="email_html" placeholder="Seu E-mail" minlength="10" maxlength="50" required/>
+                <button onclick="verificador()">Cadastrar</button>
+                <a href="/lista" class="formulario_login"><button>Lista</button></a>
+            </form>
+        </div>
+    </section>
+    <footer class="rodape">
+        <p>That's all Folks!</p>
+        <p>Powered by: PauloDev1</p>
+    </footer>
 
-
-
-
-
-    
-    <script src="./scripts.js"></script>
+<script src="./scripts.js"></script>
 </body>
 </html>
