@@ -1,6 +1,5 @@
 let nome_display = document.getElementById('nome_html');
 let idade_display = document.getElementById('idade_html');
-
 function verificador(){
 
     if(nome_display.value == "" || idade_display.value == ""){

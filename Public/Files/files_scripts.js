@@ -59,7 +59,7 @@ function tela_update(pega_id){
     update(pega_id);
     const grab_url = document.URL;
     const URL=`${grab_url}update`;
-    let meu_popup = window.open(URL, 'janela', 'width=660, height=510, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
+    let meu_popup = window.open(URL, 'janela', 'width=860, height=610, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
 }
 
 function update(pega_id){
@@ -69,3 +69,10 @@ function update(pega_id){
 
 
 
+// ---- Darkmode ---- // 
+let darkmode = document.getElementById('darkmode');
+
+
+function dark_theme(){
+    document.body.classList.toggle("dark");
+}

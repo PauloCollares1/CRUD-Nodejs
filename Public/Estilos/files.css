@@ -1,0 +1,169 @@
+/* Reset body */
+body{
+    padding:0;
+    margin:0;
+    border:0; 
+}
+
+/* ------ Sessão 0 - Menu-Bar  ------*/
+.cabecalho{
+    font-family: 'Nunito', sans-serif;
+    background-color: #cff7cf9c;
+    margin-top: 10px;
+    font-size: 18px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0px;
+}
+.logo_header{
+    margin-left: 20px;
+    padding: 5px;
+}
+.lista_header{
+    margin: 0px;
+    margin-right: 20px;
+    padding: 3px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.lista_header li{
+   list-style: none;
+   margin-left: 10px;
+}
+.lista_header li a{
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.darkmode{
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+/* ------ Sessão 1 - Login ------ */
+.sessao_login{
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login_card{
+    border-color: rgba(0, 0, 0, 0.363);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    width: 90%;
+    height: 80%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario_login{
+    margin-top: 10px;
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario_login input{
+    border-color: rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 90%;
+    height: 30px;
+}
+.formulario_login button{
+    background-color:#cff7cf9c ;
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0px;
+    margin-top: 15px;
+    width: 93%;
+    height: 33px;
+}
+.formulario_login input::placeholder{
+    font-size: 16px;
+    text-align: center;
+}
+
+/* ------ Sessão 3 - Rodapé ------ */
+.rodape{
+    background-color: #cff7cf9c;
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+.rodape p{
+    margin: 0;
+}
+
+/* ------ Animações ------ */
+.formulario_login input:hover, .formulario_login button:hover{
+    width: 100%;
+    height: 40px;
+    transition: ease-out 0.4s;
+}
+.formulario_login button:hover{
+    cursor: pointer;
+}
+.formulario_login button:active{
+    transform: translateX(6px);
+}
+.login_card i:hover{
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.darkmode:hover{
+    cursor: pointer;
+}
+.lista_header li a:hover, .logo_header:hover, .darkmode:hover {
+    background-color: aquamarine;
+}
+
+/* ------ Dark mode ------ */
+
+
+body.dark{
+    background-color: black;
+    color: bisque;
+    transition: 3s;
+}
+
+body.dark button{
+    color: bisque;
+}
+
+body.dark ::placeholder{
+    color: black;
+}
+
+body.dark .login_card{
+    border-color: bisque;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}
