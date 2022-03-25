@@ -5,6 +5,10 @@ body{
     border:0; 
 }
 
+a{
+    text-decoration: none;
+}
+
 /* ------ Sessão 0 - Menu-Bar  ------*/
 .cabecalho{
     font-family: 'Nunito', sans-serif;
@@ -102,6 +106,18 @@ body{
     margin-top: 15px;
     width: 93%;
     height: 33px;
+}
+.alerta_filho{
+
+    background-color:rgb(118, 248, 100) ;
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    text-align: center;
+    border-radius: 10px;
+    padding: 0px;
+    margin-top: 10px;
+    width: 93%;
+    height: 45px;
 }
 .formulario_login input::placeholder{
     font-size: 16px;

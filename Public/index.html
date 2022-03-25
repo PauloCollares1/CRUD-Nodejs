@@ -28,16 +28,17 @@
     <section class="sessao_login">
         <div class="login_card">
             
-            <h1>CRUD Nodejs</h1>
+            <h1>CRUD Node.js</h1>
             <i class="fa-solid fa-lock fa-xl"></i>
             <form class="formulario_login">
                 <input type="text" id="nome_html" name="nome_html" placeholder="Seu nome" minlength="3" maxlength="30" required/>
-                <input type="number" id="idade_html" name="idade_html" placeholder="Sua idade" minlength="3" maxlength="3" required/>
+                <input type="number" id="idade_html" name="idade_html" placeholder="Sua idade" min="1" max="99" required/>
                 <input type="email" id="email_html" name="email_html" placeholder="Seu E-mail" minlength="10" maxlength="50" required/>
                 <button onclick="verificador()">Cadastrar</button>
             </form>
             <a href="/lista" class="formulario_login"><button>Lista</button></a>
         </div>
+        <div id="alerta_div" class="alerta_div"></div>
     </section>
     <footer class="rodape">
         <p>That's all Folks!</p>

@@ -2,10 +2,11 @@ const banco = require('../Sistema/Database/banco.js');
 
 // ---- lista auxiliar ---- //
 let lista_pessoas = [];
-mostrar_banco();
 
-function mostrar_lista(){
-    mostrar_banco();
+async function mostrar_lista(){
+    lista_pessoas = [];
+    await mostrar_banco();
+    console.log(lista_pessoas)
     return lista_pessoas;
 }
 
@@ -28,7 +29,7 @@ async function salvar_no_banco(nome, idade,email){
 
 async function mostrar_banco(){
     // não da pra trazer direto do banco, por isso a lista
-    const lista = await banco.mongoose_model_cadastro.find({}) 
+    let lista = await banco.mongoose_model_cadastro.find({}) 
         lista.map((item) => {
                 lista_pessoas.push(item);
         })

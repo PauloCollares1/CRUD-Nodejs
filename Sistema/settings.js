@@ -24,16 +24,6 @@ app.use('/', express.static('Public'));
 app.use('/lista',express.static('Public/Files'));
 app.use('/lista/update',express.static('Public/Updates'));
 
-
-// ---- Configurando EJS ---- //
-app.use(bodyParser.urlencoded({extended:true}));
-app.engine('ejs', require('ejs').renderFile); 
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-app.use(cors());
-
-
-
 // ---- Setando as rotas ---- //
 app.use('/api', rotas.rota)
 

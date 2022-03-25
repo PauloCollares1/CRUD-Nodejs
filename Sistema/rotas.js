@@ -6,9 +6,9 @@ rota = express.Router();
 // ---- Minhas rotas ---- //
 
 // Enviando ao front usando o EJS
-rota.get('/lista', (req, res) => {
+rota.get('/lista', async(req, res) => {
 
-    res.json(funcoes.mostrar_lista());  
+    res.json(await funcoes.mostrar_lista());  
 });
 
 rota.post('/update', express.json(), (req, res) => {
