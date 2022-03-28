@@ -1,5 +1,6 @@
-const lista_display = document.getElementById('lista');
 
+
+const lista_display = document.getElementById('lista');
 
 
 var id = 0;
@@ -35,9 +36,10 @@ function entrega_valores(){
         })
 }
 
+
+
 function limpar_lista(){
     lista_display.remove();
-    
 }
 
 function deletar(pega_id){
@@ -51,31 +53,61 @@ function deletar(pega_id){
         body: JSON.stringify(credencial)
     }
     fetch('/api/deletar',options)
-    alert(`O(A) ${lista_deletar[pega_id]} foi deletado(a) com sucesso!`);
+    alert("Usuário deletado com sucesso!");
     location.reload();
 }
 
-function tela_update(pega_id){
+function verificador(email ,nome, idade){
 
-    //update(pega_id);
-    const grab_url = document.URL;
-    const URL=`${grab_url}update`;
-    window.open(URL, 'janela', 'width=860, height=610, top=100, left=699,scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no,resizable=no, fullscreen=no')
-    return location.reload()
+    if(nome == ""  || idade == ""){
+        return alert("Você esqueceu um campo vazio, favor verificar");
+    }else if(idade < 5 || idade > 99){
+        return alert("A idade permitida é entre 5 e 99 anos");
+    }else{
+        return atualizar_valores(email, nome, idade)();
+    }
 }
-
+function isNumber(n) {
+    return !isNaN(parseInt(n)) && isFinite(n);
+}
 function update(pega_id){
 
-    var email_storage = lista_deletar[pega_id]
-    localStorage.setItem('emailKey', email_storage);
-    tela_update(pega_id);
+    let update_nome = prompt("Digite o novo valor do nome:");
+    let update_idade = parseInt(prompt("Digite o novo valor da idade:"));   
+    let update_email = lista_deletar[pega_id];
+
+     if(update_nome == ""  || update_idade == ""){
+        return alert("Você esqueceu de preencher um campo, favor verificar");
+    }else if(parseInt(update_idade) < 5 || parseInt(update_idade) > 99){
+        return alert("A idade permitida é entre 5 e 99 anos");
+    }else if(isNumber(`${update_idade}`) == false ){
+        return alert("Apenas numeros inteiros");
+    }else{
+        atualizar_valores(update_email, update_nome, update_idade);
+        location.reload()
+    } 
 }
+
+function atualizar_valores(email, nome, idade){
+
+    const credenciais = { 
+        script_nome: nome,
+        script_idade: idade,
+        script_email: email
+    }
+    options = {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(credenciais)
+    }
+    fetch('/api/update',options)
+}
+
 
 
 
 // ---- Darkmode ---- // 
 let darkmode = document.getElementById('darkmode');
-
 
 function dark_theme(){
     document.body.classList.toggle("dark");
