@@ -113,6 +113,30 @@ a{
     font-size: 16px;
     text-align: center;
 }
+.estilo_lista{
+    width: 90%;
+}
+.estilo_lista2{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.estilo_lista2_buttons_deletar{
+    border-radius: 10px;
+    border-width: 1px;
+    width: 13%;
+    background-color: rgb(252, 151, 151);
+}
+.estilo_lista2_buttons_editar{
+    border-radius: 10px;
+    border-width: 1px;
+    width: 13%;
+    background-color: rgb(151, 215, 252);
+}
 
 /* ------ Sessão 3 - Rodapé ------ */
 .rodape{
@@ -130,6 +154,11 @@ a{
 .formulario_login input:hover, .formulario_login button:hover{
     width: 100%;
     height: 40px;
+    transition: ease-out 0.4s;
+}
+.estilo_lista2_buttons_deletar:hover, .estilo_lista2_buttons_editar:hover{
+    width: 17%;
+    cursor: pointer;
     transition: ease-out 0.4s;
 }
 .formulario_login button:hover{

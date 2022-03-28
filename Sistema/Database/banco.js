@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 // ---- Modelo da tabela ---- //
 const mongoose_schema_cadastro = mongoose.Schema({
     nome      :{type: String, minlength:1, maxlength:25, require},

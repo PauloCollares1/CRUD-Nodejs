@@ -1,13 +1,17 @@
+// Pegando os dados escritos no front
+let darkmode = document.getElementById('darkmode');
 let nome_display = document.getElementById('nome_html');
 let idade_display = document.getElementById('idade_html');
 let email_display = document.getElementById('email_html');
 let alerta_que_some = document.getElementById('alerta_div');
 
-
+// Conferindo se o que ta digitado na idade é  numero
 function isNumber(n) {
+
     return !isNaN(parseInt(n)) && isFinite(n);
 }
 
+// Tratamento dos dados utilizados
 function verificador(){
 
     if(nome_display.value == ""  || email_display.value == "" || idade_display.value == ""){
@@ -21,6 +25,7 @@ function verificador(){
     }
 }
 
+// faz o fecth com o backend com os dados tratados
 async function pega_valores(){
 
     const credenciais = { 
@@ -37,10 +42,11 @@ async function pega_valores(){
     document.getElementById('nome_html').value = "";
     document.getElementById('idade_html').value = "";
     document.getElementById('email_html').value = ""; 
-   
+
     apagar_alerta();
 }
 
+// Alerta prórpio com retorno para o usuário que o cadastro deu certo
 function apagar_alerta(){
 
     let alerta_proprio = (`<div class="alerta_filho"> Pessoa cadastrada com sucesso !</div>`);
@@ -53,10 +59,9 @@ function apagar_alerta(){
     },3500) 
 }
 
-// ---- Darkmode ---- // 
-let darkmode = document.getElementById('darkmode');
-
+// Aplica o darkmode
 function dark_theme(){
+
     document.body.classList.toggle("dark");
 }
     

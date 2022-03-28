@@ -3,10 +3,11 @@ const banco = require('../Sistema/Database/banco.js');
 // ---- lista auxiliar ---- //
 let lista_pessoas = [];
 
+// Mostrar a lista do banco
 async function mostrar_lista(){
+
     lista_pessoas = [];
     await mostrar_banco();
-    console.log(lista_pessoas)
     return lista_pessoas;
 }
 
@@ -27,7 +28,9 @@ async function salvar_no_banco(nome, idade,email){
     console.log("Novo usuário cadastrado: "+ nome, idade); 
 }
 
+// Buscar todos os usuários do banco
 async function mostrar_banco(){
+
     // não da pra trazer direto do banco, por isso a lista
     let lista = await banco.mongoose_model_cadastro.find({}) 
         lista.map((item) => {
@@ -35,6 +38,7 @@ async function mostrar_banco(){
         })
 }
 
+// Deleta um usuário do banco
 async function deletar_do_banco(email){
 
     await banco.mongoose_model_cadastro.findOneAndDelete({email:email})
@@ -42,10 +46,11 @@ async function deletar_do_banco(email){
     console.log("usuário deletado: "+ email); 
 }
 
+// Edita um usuário do banco através do e-mail
 async function update_banco(email, nome, idade){
+
     await banco.mongoose_model_cadastro.findOneAndUpdate({email:email},{nome:nome})
     await banco.mongoose_model_cadastro.findOneAndUpdate({email:email},{idade:idade})
-    
     console.log("----------------------------------")
     console.log("usuário editado: "+ nome, idade); 
 }

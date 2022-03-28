@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const express = require('express');
 const rotas = require('./rotas');
@@ -22,11 +21,9 @@ require('dotenv').config()
 // ---- Página estática ---- //
 app.use('/', express.static('Public'));
 app.use('/lista',express.static('Public/Files'));
-app.use('/lista/update',express.static('Public/Updates'));
 
 // ---- Setando as rotas ---- //
 app.use('/api', rotas.rota)
-
 
 // ---- Conectando o servidor ---- //
 server.listen(process.env.PORT || 5000, () => {console.log("Servidor rodando...")})
